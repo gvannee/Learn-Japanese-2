@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_gravity="center"
+    android:animateLayoutChanges="true"
+    >
+
+    <TextView
+        android:id="@+id/titleHiragana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:alpha="1"
+        android:gravity="center"
+        android:text="@string/Hiragana"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/titleKatakana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:text="@string/Katakana"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"/>
+
+
+    <GridView
+        android:id="@+id/hiraganaTable"
+        android:isScrollContainer="true"
+        android:animateLayoutChanges="true"
+        android:layout_width="0dp"
+        android:layout_height="550dp"
+        android:layout_margin="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:clipToPadding="false"
+        android:numColumns="5"
+        android:background="#EBEDFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleHiragana" />
+
+    <GridView
+        android:id="@+id/katakanaTable"
+        android:animateLayoutChanges="true"
+        android:isScrollContainer="true"
+        android:layout_width="0dp"
+        android:layout_height="550dp"
+        android:layout_margin="15dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:numColumns="5"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleKatakana"
+        />
+
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnHiragana"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Hiragana"
+            android:backgroundTint="@color/lighterPink"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btnKatakana"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Katakana"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <!--    <androidx.appcompat.widget.SwitchCompat-->
+    <!--        android:id="@+id/sw"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textOff="@string/Hiragana"-->
+    <!--        android:textOn="@string/Katakana"-->
+    <!--        android:thumb="@drawable/thumb"-->
+    <!--        android:scrollbars="vertical"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:showText="true"-->
+    <!--        app:track="@drawable/track"-->
+    <!--        android:contentDescription="@string/changeTable"/>-->
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="33dp"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginHorizontal="10dp"-->
+    <!--        android:layout_marginVertical="20dp"-->
+    <!--        android:background="@drawable/bg_switch"-->
+    <!--        android:padding="2.5dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+    <!--        <androidx.appcompat.widget.SwitchCompat-->
+    <!--            android:id="@+id/switchOnOff"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="30dp"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:checked="true"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:thumb="@drawable/thumb"-->
+    <!--            app:switchMinWidth="140dp"-->
+    <!--            app:track="@drawable/track" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="140dp"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:weightSum="2">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvSwitchYes"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center"-->
+    <!--                android:text="@string/Hiragana"-->
+    <!--                android:textColor="#4282DC"-->
+    <!--                android:textSize="12sp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvSwitchNo"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:gravity="center"-->
+    <!--                android:text="@string/Katakana"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="12sp" />-->
+
+
+    <!--        </LinearLayout>-->
+
+
+    <!--    </RelativeLayout>-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
